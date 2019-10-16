@@ -6,7 +6,7 @@
 #
 Name     : compat-gdbm-soname4
 Version  : 1.14
-Release  : 1
+Release  : 2
 URL      : https://mirrors.kernel.org/gnu/gdbm/gdbm-1.14.tar.gz
 Source0  : https://mirrors.kernel.org/gnu/gdbm/gdbm-1.14.tar.gz
 Source1 : https://mirrors.kernel.org/gnu/gdbm/gdbm-1.14.tar.gz.sig
@@ -87,7 +87,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571264278
+export SOURCE_DATE_EPOCH=1571265644
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -118,7 +118,7 @@ cd ../build32;
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1571264278
+export SOURCE_DATE_EPOCH=1571265644
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/compat-gdbm-soname4
 cp %{_builddir}/gdbm-1.14/COPYING %{buildroot}/usr/share/package-licenses/compat-gdbm-soname4/70e64fe9090c157e441681779e0f31aad34f35cb
