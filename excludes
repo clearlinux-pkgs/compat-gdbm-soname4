@@ -1,2 +1,13 @@
 # This file contains the output files that need %exclude. Full path
 # names, one per line.
+/usr/share/locale/da/LC_MESSAGES/gdbm.mo
+/usr/share/locale/de/LC_MESSAGES/gdbm.mo
+/usr/share/locale/eo/LC_MESSAGES/gdbm.mo
+/usr/share/locale/fi/LC_MESSAGES/gdbm.mo
+/usr/share/locale/fr/LC_MESSAGES/gdbm.mo
+/usr/share/locale/ja/LC_MESSAGES/gdbm.mo
+/usr/share/locale/pl/LC_MESSAGES/gdbm.mo
+/usr/share/locale/pt_BR/LC_MESSAGES/gdbm.mo
+/usr/share/locale/sr/LC_MESSAGES/gdbm.mo
+/usr/share/locale/uk/LC_MESSAGES/gdbm.mo
+/usr/share/locale/vi/LC_MESSAGES/gdbm.mo

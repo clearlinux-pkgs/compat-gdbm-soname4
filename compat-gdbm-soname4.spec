@@ -6,7 +6,7 @@
 #
 Name     : compat-gdbm-soname4
 Version  : 1.14
-Release  : 2
+Release  : 3
 URL      : https://mirrors.kernel.org/gnu/gdbm/gdbm-1.14.tar.gz
 Source0  : https://mirrors.kernel.org/gnu/gdbm/gdbm-1.14.tar.gz
 Source1 : https://mirrors.kernel.org/gnu/gdbm/gdbm-1.14.tar.gz.sig
@@ -15,7 +15,6 @@ Group    : Development/Tools
 License  : GPL-3.0
 Requires: compat-gdbm-soname4-lib = %{version}-%{release}
 Requires: compat-gdbm-soname4-license = %{version}-%{release}
-Requires: compat-gdbm-soname4-locales = %{version}-%{release}
 BuildRequires : bison
 BuildRequires : dejagnu
 BuildRequires : expect
@@ -68,14 +67,6 @@ Group: Default
 license components for the compat-gdbm-soname4 package.
 
 
-%package locales
-Summary: locales components for the compat-gdbm-soname4 package.
-Group: Default
-
-%description locales
-locales components for the compat-gdbm-soname4 package.
-
-
 %prep
 %setup -q -n gdbm-1.14
 pushd ..
@@ -87,7 +78,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571265644
+export SOURCE_DATE_EPOCH=1571266621
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -118,7 +109,7 @@ cd ../build32;
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1571265644
+export SOURCE_DATE_EPOCH=1571266621
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/compat-gdbm-soname4
 cp %{_builddir}/gdbm-1.14/COPYING %{buildroot}/usr/share/package-licenses/compat-gdbm-soname4/70e64fe9090c157e441681779e0f31aad34f35cb
@@ -132,8 +123,18 @@ popd
 fi
 popd
 %make_install
-%find_lang gdbm
 ## Remove excluded files
+rm -f %{buildroot}/usr/share/locale/da/LC_MESSAGES/gdbm.mo
+rm -f %{buildroot}/usr/share/locale/de/LC_MESSAGES/gdbm.mo
+rm -f %{buildroot}/usr/share/locale/eo/LC_MESSAGES/gdbm.mo
+rm -f %{buildroot}/usr/share/locale/fi/LC_MESSAGES/gdbm.mo
+rm -f %{buildroot}/usr/share/locale/fr/LC_MESSAGES/gdbm.mo
+rm -f %{buildroot}/usr/share/locale/ja/LC_MESSAGES/gdbm.mo
+rm -f %{buildroot}/usr/share/locale/pl/LC_MESSAGES/gdbm.mo
+rm -f %{buildroot}/usr/share/locale/pt_BR/LC_MESSAGES/gdbm.mo
+rm -f %{buildroot}/usr/share/locale/sr/LC_MESSAGES/gdbm.mo
+rm -f %{buildroot}/usr/share/locale/uk/LC_MESSAGES/gdbm.mo
+rm -f %{buildroot}/usr/share/locale/vi/LC_MESSAGES/gdbm.mo
 rm -f %{buildroot}/usr/bin/gdbm_dump
 rm -f %{buildroot}/usr/bin/gdbm_load
 rm -f %{buildroot}/usr/bin/gdbmtool
@@ -170,7 +171,3 @@ rm -f %{buildroot}/usr/share/man/man3/gdbm.3
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/compat-gdbm-soname4/70e64fe9090c157e441681779e0f31aad34f35cb
-
-%files locales -f gdbm.lang
-%defattr(-,root,root,-)
-
