@@ -1,0 +1,8 @@
+1.14
+bison
+dejagnu
+expect
+flex
+ncurses-dev
+readline-dev
+tcl
